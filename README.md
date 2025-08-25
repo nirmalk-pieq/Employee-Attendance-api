@@ -1,7 +1,7 @@
 # Employee-Attendance-api
 A simple RESTful API for managing employee attendance, built using Kotlin, PostgreSQL, and DropWizard.
 
-### Features
+### Key Features
 
 - Employee Creation
 - View the list of employees
@@ -40,19 +40,8 @@ A simple RESTful API for managing employee attendance, built using Kotlin, Postg
 
 ## API Endpoints:
 
-- `/employees` - This endpoint return list of employee in the Database.
+- `/employees` - This "GET" method endpoint return list of employee in the Database.
 
-#### Sample Request Body
-
-```json
-{
-  "firstName":"Nirmalrajaa",
-  "lastName": "K",
-  "role":"R2",
-  "department": "D1",
-  "reportingTo":"EMP-1"
-}
-```
 
 #### Sample Response
 
@@ -75,8 +64,35 @@ A simple RESTful API for managing employee attendance, built using Kotlin, Postg
 }]
 ```
 
+- `/employees/addEmployee` - This "POST" method endpoint is used to create a employee record in the employee table.
 
-- `/employees/{employee_id}` - This endpoint return particular employees details from the Database.
+#### Sample Request Body
+
+```json
+{
+  "firstName":"Nirmalrajaa",
+  "lastName": "K",
+  "role":"R2",
+  "department": "D1",
+  "reportingTo":"EMP-1"
+}
+```
+
+#### Sample Response
+
+```json
+[
+  {
+    "id": "fe3a9059-e546-448d-a8f4-acb94d87c07b",
+    "firstName": "Nirmalrajaa",
+    "lastName": "K",
+    "role": "R1",
+    "department": "D1",
+    "reportingTo": "EMP-1"
+}]
+```
+
+- `/employees/{employee_id}` - This "GET" method endpoint return particular employees details from the Database.
 
 
 #### Sample Response
@@ -92,7 +108,7 @@ A simple RESTful API for managing employee attendance, built using Kotlin, Postg
 }]
 ```
 
-- `/attendance/` - This endpoint provides the attendance record without any filter i.e it will return all the attendance record of the employees will be given.
+- `/attendance/` - This "GET" method endpoint provides the attendance record without any filter i.e it will return all the attendance record of the employees will be given.
 
 #### Sample Response
 
@@ -150,7 +166,6 @@ A simple RESTful API for managing employee attendance, built using Kotlin, Postg
 ]
 ```
 
-
 - `attendance/addCheckin` - Using "Post" method, create the checkin using the query parameters 'employeeId, checkInTime`
 
 #### Sample Response
@@ -171,7 +186,7 @@ A simple RESTful API for managing employee attendance, built using Kotlin, Postg
 }
 ```
 
-- `employees/addCheckOut` - This endpoint create the checkout for the employee if there is a checkin and null checkout for the day.
+- `employees/addCheckOut` - This "POST" method endpoint create the checkout for the employee if there is a checkin and null checkout for the day. Queryparams will have "employeeId", "checkOutTime".
 
 #### Sample Response
 
