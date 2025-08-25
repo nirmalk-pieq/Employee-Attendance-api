@@ -38,6 +38,23 @@ A simple RESTful API for managing employee attendance, built using Kotlin, Postg
 - DAO Layer has only the CRUD operations.
 
 
+# Work Flow
+
+- First, the client sends an HTTP request, which is received and processed by the Jetty web server.
+
+- Jetty forwards the request to Jersey , which handles the routing to the resource class based on the URL endpoint.
+
+- The resource method (endpoint) calls the service layer, where business logic and validation are performed.
+
+- If validation passes, the service layer interacts with the DAO (Data Access Object) layer to perform the necessary CRUD operation on the database.
+
+- Once the DAO completes the operation, the result is returned back through the service layer to the resource method.
+
+- Jackson (a JSON processor) is used to convert the Java object returned from the resource into a JSON response.
+
+- Finally, the JSON response is sent back to the client.
+
+
 ## API Endpoints:
 
 - `/employees` - This "GET" method endpoint return list of employee in the Database.
