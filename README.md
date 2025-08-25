@@ -1,6 +1,43 @@
 # Employee-Attendance-api
 A simple RESTful API for managing employee attendance, built using Kotlin, PostgreSQL, and DropWizard.
 
+### Features
+
+- Employee Creation
+- View the list of employees
+- Create attendance for each employee
+- Employee should have one checkin and one checkout per day
+
+
+# Layers
+
+- #### Model
+- #### Resources
+- #### Application
+- #### Service
+- #### DAO (Data Access Object)
+
+## Model
+
+- Here, the classes for Attendance, Employee, Department and Role.
+- It also has createEmployeeRequest class for getting the input request as body json.
+- In addition, the model class also provides basic validation of inputs.
+
+## Resource
+
+- Resource layer has the endpoints which calls the service layer for validations, processing data and updating database with changes.
+- This layer also throws the response of the services and DAO.
+
+## Service
+
+- Service layer is called by the resource layer.
+- This layer also helps in validation and sending the validated data to the DAO layer for updating data into the database.
+
+## DAO
+
+- DAO Layer has only the CRUD operations.
+
+
 ## API Endpoints:
 
 - `/employees` - This endpoint return list of employee in the Database.
@@ -147,31 +184,3 @@ A simple RESTful API for managing employee attendance, built using Kotlin, Postg
   "hoursWorked": 0
 }
 ```
-
-# Layers
-
-- #### Model
-- #### Resources
-- #### Application
-- #### Service
-- #### DAO (Data Access Object)
-
-## Model
-
-- Here, the classes for Attendance, Employee, Department and Role.
-- It also has createEmployeeRequest class for getting the input request as body json.
-- In addition, the model class also provides basic validation of inputs.
-
-## Resource
-
-- Resource layer has the endpoints which calls the service layer for validations, processing data and updating database with changes.
-- This layer also throws the response of the services and DAO.
-
-## Service
-
-- Service layer is called by the resource layer.
-- This layer also helps in validation and sending the validated data to the DAO layer for updating data into the database.
-
-## DAO
-
-- DAO Layer has only the CRUD operations.
