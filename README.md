@@ -55,7 +55,7 @@ A simple RESTful API for managing employee attendance, built using Kotlin, Postg
 }]
 ```
 
-- `/attendance/`
+- `/attendance/` - This endpoint provides the attendance record without any filter i.e it will return all the attendance record of the employees will be given.
 
 #### Sample Response
 
@@ -134,7 +134,7 @@ A simple RESTful API for managing employee attendance, built using Kotlin, Postg
 }
 ```
 
-- `employees/addCheckOut`
+- `employees/addCheckOut` - This endpoint create the checkout for the employee if there is a checkin and null checkout for the day.
 
 #### Sample Response
 
